@@ -26,7 +26,7 @@ contract Airdrop is Ownable {
     uint left = leftCopies[token][currentEpoch];
     return left > 0 && userClaimTimes[token][userAddress] < 3 && userLastClaimEpoch[token][userAddress] < currentEpoch;
   }
-  
+
   function claim(address token) public returns (bool) {
     uint currentEpoch = epoch();
     address userAddress = msg.sender;
